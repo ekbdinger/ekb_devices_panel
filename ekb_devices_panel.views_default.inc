@@ -11,10 +11,9 @@ function ekb_devices_panel_views_default_views() {
   $view->name = 'devices_manufacturer';
   $view->description = 'Devices organized by manufacturer';
   $view->tag = 'devices';
-  $view->view_php = '';
   $view->base_table = 'node';
-  $view->is_cacheable = FALSE;
-  $view->api_version = 2;
+  $view->core = 0;
+  $view->api_version = '2';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
@@ -74,7 +73,7 @@ function ekb_devices_panel_views_default_views() {
     'vid' => array(
       'operator' => 'in',
       'value' => array(
-        '16' => '16',
+        16 => '16',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -91,9 +90,9 @@ function ekb_devices_panel_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'role',
     'role' => array(
-      '3' => 3,
-      '5' => 5,
-      '8' => 8,
+      3 => 3,
+      5 => 5,
+      8 => 8,
     ),
   ));
   $handler->override_option('cache', array(
@@ -129,13 +128,14 @@ function ekb_devices_panel_views_default_views() {
     'title' => '',
     'description' => '',
     'weight' => 0,
-    'name' => 'navigation',
+    'name' => 'primary-links',
   ));
   $handler->override_option('tab_options', array(
     'type' => 'none',
     'title' => '',
     'description' => '',
     'weight' => 0,
+    'name' => 'navigation',
   ));
 
   $views[$view->name] = $view;
@@ -145,10 +145,9 @@ function ekb_devices_panel_views_default_views() {
   $view->name = 'devices_taxonomy_exposed';
   $view->description = 'Created from a document from the documentation team';
   $view->tag = 'devices';
-  $view->view_php = '';
   $view->base_table = 'node';
-  $view->is_cacheable = FALSE;
-  $view->api_version = 2;
+  $view->core = 0;
+  $view->api_version = '2';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
@@ -208,7 +207,7 @@ function ekb_devices_panel_views_default_views() {
     'vid' => array(
       'operator' => 'in',
       'value' => array(
-        '14' => '14',
+        14 => '14',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -225,10 +224,10 @@ function ekb_devices_panel_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'role',
     'role' => array(
-      '3' => 3,
-      '5' => 5,
-      '7' => 7,
-      '8' => 8,
+      3 => 3,
+      5 => 5,
+      7 => 7,
+      8 => 8,
     ),
   ));
   $handler->override_option('cache', array(
@@ -268,6 +267,7 @@ function ekb_devices_panel_views_default_views() {
     'title' => '',
     'description' => '',
     'weight' => 0,
+    'name' => 'navigation',
   ));
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->override_option('block_description', 'fred');
